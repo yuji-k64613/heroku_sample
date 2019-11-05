@@ -44,11 +44,10 @@ public class FileServer
 
     public static void main(String[] args) throws Exception
     {
-        int port = 8080;
+        int port = Integer.parseInt(System.getenv("PORT"));
         //String dir = "/Users/konishiyuji/workspaces/jetty/Demo/sample/home";
         //Path userDir = Paths.get(dir); //Paths.get(System.getProperty("user.dir"));
         Path userDir = Paths.get(System.getProperty("docs.dir"));
-        System.out.println("PATH=" + userDir);
         PathResource pathResource = new PathResource(userDir);
 
         Server server = createServer(port, pathResource);
