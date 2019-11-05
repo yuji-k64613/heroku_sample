@@ -11,3 +11,6 @@ repositories {
 dependencies {
     implementation fileTree(dir: 'lib', include: ['*.jar'])
 }
+
+task stage(dependsOn: ['build', 'clean'])
+build.mustRunAfter clean
